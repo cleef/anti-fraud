@@ -1,4 +1,4 @@
-# anti-fraud
+ï»¿# anti-fraud
 anti fraud in scala / spark graph
 
 ## community detection/group detection: infomap
@@ -12,5 +12,5 @@ anti fraud in scala / spark graph
 
 
 ## introduction course
-* [´óÊı¾İ·ç¿ØÊµ¼ù](https://study.163.com/course/introduction.htm?courseId=1208936823)
+* [å¤§æ•°æ®é£æ§å®è·µ](https://study.163.com/course/introduction.htm?courseId=1208936823)
 
