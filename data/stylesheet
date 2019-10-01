@@ -1,0 +1,22 @@
+
+node {
+    size: 50px;
+    fill-color: grey;
+    text-size:20px;
+}
+
+node.user_good {
+	fill-color: #68BDF6;
+}
+
+node.user_bad30 {
+    fill-color: #FF0000;
+}
+
+node.user_bad7 {
+	fill-color: #FF756E;
+}
+
+node.user_reject {
+	fill-color: #FFD86E;
+}
