@@ -3,7 +3,7 @@
 ## device fingerprint
 * [2012 Third-party web tracking Policy and Technology](http://cyberlaw.stanford.edu/files/publication/files/trackingsurvey12.pdf)
 * [2016 Beauty and the Beast Diverting modern web browsers to build unique browser fingerprints](https://hal.inria.fr/hal-01285470/file/beauty-sp16.pdf)
-** [unique] (https://amiunique.org/fp)
+    ** [unique] (https://amiunique.org/fp)
 
 ## community detection/group detection: infomap
 * [infomap](http://www.mapequation.org/)
