@@ -8,6 +8,7 @@ import redsea.LocalSparkContext
 import scala.reflect.ClassTag
 
 object GraphHelper extends LocalSparkContext {
+  import spark.implicits._
 
   def goodBadRate[ED: ClassTag](g:Graph[Node, ED])  = {
     val bad:VertexRDD[Int] = g.aggregateMessages[Int](

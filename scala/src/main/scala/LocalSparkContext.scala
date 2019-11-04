@@ -2,7 +2,8 @@
 package redsea
 
 trait LocalSparkContext {
-  System.setProperty("hadoop.home.dir","E:/redsea/data" )
+  // $dir$/bin/winutils.exe
+  System.setProperty("hadoop.home.dir","F:/anti-fraud/hadoop_home" )
 
   val spark = LocalSpark.getSpark()
 

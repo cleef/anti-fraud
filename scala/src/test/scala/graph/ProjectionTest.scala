@@ -1,7 +1,5 @@
 package graph
 
-import graph.{GraphHelper, Visualization}
-
 object ProjectionTest  {
 
   def main(args: Array[String]): Unit = {

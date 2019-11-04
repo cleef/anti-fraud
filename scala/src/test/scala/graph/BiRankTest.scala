@@ -1,7 +1,6 @@
 package graph
 
 import redsea.LocalSparkContext
-import graph.{BiPageRank, Node}
 import org.apache.spark.graphx.{Edge, Graph, VertexId}
 import org.apache.spark.rdd.RDD
 

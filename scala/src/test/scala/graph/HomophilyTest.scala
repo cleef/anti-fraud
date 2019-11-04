@@ -1,7 +1,6 @@
 package graph
 
 import graph.GraphApplication.trainData
-import graph.GraphHelper
 
 object HomophilyTest {
 

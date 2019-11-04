@@ -31,7 +31,7 @@ class GraphApplication extends  LocalSparkContext  {
 
   def userFraudScore(testData:String, propScoreData:String, userScoreSaveDir:String) = {
 //    val df = GraphLoader.loadData(testData)
-    val scoreDf  = LocalSpark.loadCsv(propScoreData).withColumn("id", col("id").cast("Long")).withColumn("fraudScore", col("fraudScore").cast("Double"))
+    val scoreDf  = LocalSpark.loadCsv(spark, propScoreData).withColumn("id", col("id").cast("Long")).withColumn("fraudScore", col("fraudScore").cast("Double"))
     val score:RDD[(VertexId, Double)] = scoreDf.map( row => (row.getAs[Long]("id"), row.getAs[Double]("fraudScore")) ).rdd
 
     val graph:Graph[Node, Int] = buildGraph(testData, false, attrColumns:_*)
@@ -60,12 +60,14 @@ object GraphApplication extends  LocalSparkContext {
   val minInDegree = 2
   val maxInDegree = 200
 
-  val trainData = "file:///F:/anti-fraud/data/pagerank_property.csv"
-  val testData = "file:///F:/anti-fraud/data/pagerank_user.csv"
+  val dataDir = "file:///F:/data/"
 
-  val propScoreSaveDir = "file:///F:/anti-fraud/data/prop_fscore"
-  val userScoreSaveDir = "file:///F:/anti-fraud/data/user_fscore"
-  val propScoreData = "file:///F:/anti-fraud/data/prop_fscore.csv"
+  val trainData = dataDir + "pagerank_property.csv"
+  val testData = dataDir + "pagerank_user.csv"
+
+  val propScoreSaveDir = dataDir + "prop_fscore"
+  val propScoreData = dataDir + "prop_fscore.csv"
+  val userScoreSaveDir = dataDir + "user_fscore"
 
   def buildGraph(data:String, train_mode: Boolean, attrColumns:String*) = {
     val df = GraphLoader.loadData(data)

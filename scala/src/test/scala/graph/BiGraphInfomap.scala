@@ -83,7 +83,7 @@ class BiGraphInfomap  extends FunSuite with BeforeAndAfter with LocalSparkContex
       graph
   }
 
-  def filter_group(graph:Graph[graph.Node, Int], group: RDD[(VertexId, ModuleId)], save:Boolean = true) = {
+  def filter_group(g:Graph[graph.Node, Int], group: RDD[(VertexId, ModuleId)], save:Boolean = true) = {
     val min_group = 10
     val max_group = 100
     //filter group by member size
@@ -92,7 +92,7 @@ class BiGraphInfomap  extends FunSuite with BeforeAndAfter with LocalSparkContex
     })
 
     //filter group by member types
-    val groupNodeTypeCnt = group.join(graph.vertices).map{
+    val groupNodeTypeCnt = group.join(g.vertices).map{
       case(vid, (mid, node)) => (mid, node.label)}.distinct().map{
       case(mid, label) => (mid, 1)}.reduceByKey(_+_).filter{
       case(mid, cnt) => cnt > 2

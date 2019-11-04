@@ -1,7 +1,6 @@
 package graph
 
 import GraphApplication._
-import graph.Visualization
 import redsea.LocalSparkContext
 
 
