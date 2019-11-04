@@ -20,7 +20,7 @@
 
         <scala.version>2.11</scala.version>
         <scala.complete.version>2.11.8</scala.complete.version>
-        <spark.version>2.1.0</spark.version>
+        <spark.version>2.4.4</spark.version>
         <gs.version>1.3</gs.version>
         <spark.scope>compile</spark.scope>
     </properties>
