@@ -1,0 +1,18 @@
+﻿
+
+========== 安装
+1) 下载 anaconda Python3.7 version, Graphical Installer
+https://www.anaconda.com/distribution/#download-section
+
+2> 安装anaconda 
+
+========== 启动
+1> 开始菜单 -> Jupyter Notebook
+
+
+========== 运行
+1> 将 device-fingerprint.ipynb / fingerprint_data.csv 文件拷贝到<我的文档>目录下
+   C:\Users\${username}
+2> 浏览器中访问  
+   http://localhost:8888/notebooks/device-fingerprint.ipynb
+3> Cell -> Run All

@@ -1,0 +1,22 @@
+﻿
+1. download JDK: 
+   https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+1.1 windows 设置 JAVA_HOME:
+    控制面板 ->高级系统设置 -> 高级 -> 环境变量 ->
+      变量 JAVA_HOME ，值 D:\jdk1.8.0_181
+  
+2. download IntelliJ IDEA: 
+   https://www.jetbrains.com/idea/download/#section=windows
+
+3. Scala Plugin:
+   Settings -> Plugins -> Scala
+
+4. Import Project: 
+   File -> New -> Project from existing Sources -> Maven
+
+5. Setup Scala SDK: 
+   Project Structure -> Project Settings -> Modules -> Dependencies -> + -> Library
+
+6. 设置运行内存
+   Run -> Edit Configurations -> VM options -> -Xmx2048m

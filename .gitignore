@@ -1,0 +1,11 @@
+/.project
+/.settings/
+*/.project
+*/.settings/
+*/target/
+logs
+target
+spark-warehouse
+.idea
+TODO.txt
+

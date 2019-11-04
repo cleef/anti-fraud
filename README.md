@@ -14,6 +14,6 @@
 * [2018 Behavior Language Processing with Graph based Feature Generation for Fraud Detection in Online Lending](snap.stanford.edu/mis2/files/MIS2_paper_26.pdf)
 
 
-## introduction course
+# introduction course
 * [大数据风控实践](https://study.163.com/course/introduction.htm?courseId=1208936823)
 
