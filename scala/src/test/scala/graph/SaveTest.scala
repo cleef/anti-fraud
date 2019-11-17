@@ -8,7 +8,7 @@ object SaveTest extends  LocalSparkContext {
   def main(args: Array[String]): Unit = {
     val df = Seq((1, "First Value", java.sql.Date.valueOf("2010-01-01")), (2, "Second Value", java.sql.Date.valueOf("2010-02-01"))).toDF("int_column", "string_column", "date_column")
 
-    val tmp = "file:///F:/anti-fraud/data/output"
+    val tmp = "file:///F:/anti-fraud/scala/data/output"
     LocalSpark.saveAsCsv(df, tmp)
   }
 

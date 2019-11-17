@@ -6,7 +6,7 @@ object ProjectionTest  {
     val columns = Seq("imsi")
     val graph = GraphApplication.buildAndFilterGraph(GraphApplication.trainData, true, 10, 10, columns:_* )
 
-    Visualization.plot(graph, "F:/anti-fraud/data/output/graph.png")
+    Visualization.plot(graph, "F:/anti-fraud/scala/data/output/graph.png")
 
     println(graph.vertices.count)
     println(graph.edges.count)
@@ -17,7 +17,7 @@ object ProjectionTest  {
 
     GraphHelper.homophily(graph)
 
-    Visualization.plot(userGraph, "F:/anti-fraud/data/output/user_graph.png")
+    Visualization.plot(userGraph, "F:/anti-fraud/scala/data/output/user_graph.png")
   }
 
 }

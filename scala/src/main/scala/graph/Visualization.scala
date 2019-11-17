@@ -7,7 +7,7 @@ import org.graphstream.stream.file.FileSinkImages.{LayoutPolicy, OutputType, Qua
 
 object Visualization {
 
-  val stylesheet = "file:///F:/anti-fraud/data/stylesheet"
+  val stylesheet = "file:///F:/anti-fraud/scala/data/stylesheet"
 
   def flag2str(flag:Int) = {
     flag match {

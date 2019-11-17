@@ -9,6 +9,8 @@ import org.scalatest.{BeforeAndAfter, FunSuite}
 class BiGraphInfomap  extends FunSuite with BeforeAndAfter with LocalSparkContext {
   import spark.implicits._
 
+  val outputPath = "F:/anti-fraud/scala/data/output/"
+
   test("bipartite graph") {
     val graph = load_graph()
     val edges: Array[((VertexId, VertexId), Double)] = graph.edges.map(e => ((e.srcId, e.dstId), 1.0) ).collect()
@@ -28,7 +30,7 @@ class BiGraphInfomap  extends FunSuite with BeforeAndAfter with LocalSparkContex
     )
 
     //draw graph
-    val fileName =   "F:/anti-fraud/data/output/group_graph.png"
+    val fileName =   outputPath + "group_graph.png"
     Visualization.plot(nodeGraph, fileName)
   }
 
@@ -53,7 +55,7 @@ class BiGraphInfomap  extends FunSuite with BeforeAndAfter with LocalSparkContex
     var targetGroupIds = Seq(-1072444798, -1090571725, -474504547, 2094808212, 2094808212, -878933364)
 
     val graph = load_graph()
-    val group: RDD[(VertexId, VertexId)] = LocalSpark.loadCsv(spark, "F:/anti-fraud/data/output/group.csv").map{ r => (r.getAs[String]("vid").toLong ,r.getAs[String]("gid").toLong) }.rdd
+    val group: RDD[(VertexId, VertexId)] = LocalSpark.loadCsv(spark, outputPath + "group.csv").map{ r => (r.getAs[String]("vid").toLong ,r.getAs[String]("gid").toLong) }.rdd
 
 //    targetGroupId =
     for(gid <- targetGroupIds)
@@ -71,7 +73,7 @@ class BiGraphInfomap  extends FunSuite with BeforeAndAfter with LocalSparkContex
     println(nodeGraph.vertices.count)
 
     //draw graph
-    val fileName =   "F:/anti-fraud/data/output/group_graph_" + targetGroupId + ".png"
+    val fileName =  outputPath +  "group_graph_" + targetGroupId + ".png"
     Visualization.plot(nodeGraph, fileName)
   }
 
@@ -105,7 +107,7 @@ class BiGraphInfomap  extends FunSuite with BeforeAndAfter with LocalSparkContex
     if(save)
     {
       val filterGroup = group.filter { case(vid, mid) => groupIds.contains(mid) }
-      LocalSpark.saveAsCsv(filterGroup.toDF("vid", "gid"), "F:/anti-fraud/data/output/group.csv")
+      LocalSpark.saveAsCsv(filterGroup.toDF("vid", "gid"), outputPath + "group.csv")
     }
 
     displayGroup.collect.sortBy(_._1).foreach(println)

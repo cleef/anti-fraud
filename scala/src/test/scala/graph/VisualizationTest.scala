@@ -9,7 +9,7 @@ object VisualizationTest extends  LocalSparkContext  {
   def draw(min:Int, max:Int, columns:Seq[String]) = {
     val nodeGraph = GraphApplication.buildAndFilterGraph(trainData, true, min, max, columns:_*)
 
-    val fileName =   "F:/anti-fraud/data/output/graph.png"
+    val fileName =   "F:/anti-fraud/scala/data/output/graph.png"
     Visualization.plot(nodeGraph, fileName)
     println(nodeGraph.vertices.count)
     println(nodeGraph.edges.count)
