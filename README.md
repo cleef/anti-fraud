@@ -15,5 +15,5 @@
 
 
 # introduction course
-* [大数据风控实践](https://study.163.com/course/introduction.htm?courseId=1208936823)
+* [大数据风控实践](https://edu.csdn.net/course/detail/26369)
 
